@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cloud Storage</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    margin: 0;
+    text-align: center;
+}
+
+.navbar {
+    background: #222;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: #00f2fe;
+    text-decoration: none;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.upload-box {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+li {
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    width: 350px;
+    border-radius: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div>☁️ Cloud Storage</div>
+    <div>Welcome {{user}} | 
+    <a href="/dashboard">Dashboard</a>
+    <a href="/search">Search</a>
+    <a href="/logout">Logout</a></div>
+</div>
+
+<!-- UPLOAD -->
+<div class="upload-box">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+        <button>Upload</button>
+    </form>
+</div>
+<h3 style="color:white;">Your Files</h3>
+
+<ul>
+{% for file in files %}
+<li>
+{{file}} <br>
+<a href="/download/{{file}}">Download</a>
+<a href="/delete/{{file}}">Delete</a>
+</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
