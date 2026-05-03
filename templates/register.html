@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #7575ff, #ff7eb3);
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .register-box {
+            background: white;
+            width: 320px;
+            margin: 120px auto;
+            padding: 25px;
+
+            /* 🔥 BORDER */
+            border: 3px solid #75b1ff;
+
+            /* Rounded corners */
+            border-radius: 12px;
+
+            /* Shadow */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background: #75cfff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5ca6e6;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="register-box">
+    <h2>📝 Register</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <a href="/login">Already have an account? Login</a>
+</div>
+
+</body>
+</html>
